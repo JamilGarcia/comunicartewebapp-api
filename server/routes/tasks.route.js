@@ -5,6 +5,6 @@ const router = require('express').Router();
 
 router.post("/", verifyUser);
 router.get("/test", testUser);
-router.get("/perfil_usuario",getDatosUsuario);
+router.post("/perfil_usuario",getDatosUsuario);
 
 module.exports = router;
