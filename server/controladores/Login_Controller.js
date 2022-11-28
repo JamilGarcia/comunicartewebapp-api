@@ -25,9 +25,7 @@ exports.verifyUser = async (req,res) => {
             } else {
                 return res.status(401).send("Correo o contraseña es incorrecto.");
             }
-        } else {
-            //Retornar mensaje que n
-        }
+        } 
     } catch (error) {
         res.status(500).send("Server Error");
     }
