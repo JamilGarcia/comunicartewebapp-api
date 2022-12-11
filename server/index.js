@@ -15,13 +15,13 @@ const corsOptions ={
 
 
 
+
+app.use(cors(corsOptions));//Permite comunicar servidor front-end y servidor back-end
+app.use(express.json());
 app.use((req, res, next) => {
   res.header({"Access-Control-Allow-Origin": "*"});
   next();
 }) 
-app.use(cors(corsOptions));//Permite comunicar servidor front-end y servidor back-end
-app.use(express.json());
-
 
 //import route
 const routePrueba = require('./routes/tasks.route');
