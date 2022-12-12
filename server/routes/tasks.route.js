@@ -8,7 +8,8 @@ router.get("/test", testUser);
 router.post("/perfil_usuario",getDatosUsuario);
 router.post("/Gerente", ObtenerNombreUsuario);
 router.post("/Subgerente", ObtenerNombreUsuario);
-router.post("/modificar_perfil", getDatosUsuario);
 router.post("/Ejecutivo_cuenta", ObtenerNombreUsuario); 
+router.post("/modificar_perfil", getDatosUsuario);
+
 
 module.exports = router;
