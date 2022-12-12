@@ -1,5 +1,5 @@
 const {  verifyUser, testUser } = require('../controladores/Login_Controller');
-const {getDatosUsuario} = require('../controladores/tasks.controller');
+const {getDatosUsuario, ObtenerNombreUsuario} = require('../controladores/tasks.controller');
 const router = require('express').Router();
 //router.get('/getUsers',getUsers);
 
