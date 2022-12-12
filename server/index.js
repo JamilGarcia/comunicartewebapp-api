@@ -25,8 +25,10 @@ app.use(express.json());
 
 //import route
 const routePrueba = require('./routes/tasks.route');
+const rutasCRUDEmpleados = require('./routes/crudEmpleados.route');
 //initialize routes
 app.use("/",routePrueba);
+app.use("/",rutasCRUDEmpleados);
  
 app.listen(port, () => {
   console.log(`Server empezado en el puerto ${port}`);
