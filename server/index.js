@@ -14,14 +14,14 @@ const corsOptions ={
 }
 
 
-
+app.use((req, res, next) => {
+  res.header({"Access-Control-Allow-Origin": '*'});
+  next();
+});
 
 app.use(cors(corsOptions));//Permite comunicar servidor front-end y servidor back-end
 app.use(express.json());
-app.use((req, res, next) => {
-  res.header({"Access-Control-Allow-Origin": "*"});
-  next();
-}) 
+
 
 //import route
 const routePrueba = require('./routes/tasks.route');
@@ -30,4 +30,4 @@ app.use("/",routePrueba);
  
 app.listen(port, () => {
   console.log(`Server empezado en el puerto ${port}`);
-  })
+  });
