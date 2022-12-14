@@ -26,6 +26,16 @@ exports.ObtenerNombreUsuario = async(req, res) => {
     }
 }
 
-const modificarDatosUsuario = async(req,res) => {
-    res.send("updating a task");
+exports.modificarDatosUsuario = async(req,res) => {
+    try {
+        const dataUser = req.body;
+        console.log(dataUser);
+        const result = await pool.query('UPDATE main_users SET primer_nombre = $1, segundo_nombre = $2, apellidos = $3, correo = $4 WHERE correo = $5',
+        [dataUser.primer_nombre, dataUser.segundo_nombre, dataUser.apellidos, dataUser.correoNuevo, dataUser.correoViejo]);
+        
+        res.send("updating a task");
+
+    } catch (error) {
+        console.log(error);
+    }
 }
